@@ -27,6 +27,8 @@ fun HomeScreen(
     onItemClick: (KadiSalonItem) -> Unit
 ) {
     val categories = listOf("الكل", "الخدمات الرئيسية", "المراقبة الحية", "التقارير الضريبية", "الإعدادات")
+    val defaultPeripheral = "UV-C Chamber Sanitation IoT Sensor"
+    val activePeripheralName = state.telemetry?.peripheralName ?: defaultPeripheral
 
     Column(
         modifier = Modifier
@@ -36,7 +38,7 @@ fun HomeScreen(
     ) {
         // Header
         Column {
-            Text("تطبيق كادي للتجميل — مطلوب أخصائية خدمة عملاء وإد", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
+            Text("تطبيق كادي للتجميل - صالون وسبا العناية الفاخرة", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
             Text("منظومة beauty_salon المتكاملة مع ربط UV-C Chamber Sanitation IoT Sensor", fontSize = 12.sp, color = BrandTextSecondary)
         }
 
@@ -52,7 +54,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'UV-C Chamber Sanitation IoT Sensor'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    Text("العتاد الحي: $activePeripheralName", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "UV-C Chamber Sanitation IoT Sensor: ONLINE | READY", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {

@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="تطبيق كادي للتجميل — مطلوب أخصائية خدمة عملاء وإد"
+        android:label="تطبيق كادي للتجميل - صالون وسبا العناية الفاخرة"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
         <activity
